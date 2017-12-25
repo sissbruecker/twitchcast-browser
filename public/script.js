@@ -20,7 +20,8 @@ function connect() {
 
         console.log(`Received browser data from: ${event.senderId}`);
 
-        const browserData = event.data;
+        const json = event.data;
+        const browserData = JSON.parse(json);
 
         displayChannelList(browserData.channels);
 
