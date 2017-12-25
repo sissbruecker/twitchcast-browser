@@ -5,7 +5,14 @@ function connect() {
     cast.receiver.logger.setLevelValue(0);
 
     console.log('Starting Receiver Manager');
+
     window.castReceiverManager = cast.receiver.CastReceiverManager.getInstance();
+
+    window.castReceiverManager.onReady = function (event) {
+        console.log('Received Ready event: ' + JSON.stringify(event.data));
+        window.castReceiverManager.setApplicationState('Application status is ready...');
+    };
+
     window.messageBus = window.castReceiverManager.getCastMessageBus(
         'urn:x-cast:com.google.cast.twitchcast.browser'
     );
@@ -16,7 +23,9 @@ function connect() {
         const browserData = event.data;
 
         displayChannelList(browserData.channels);
-    }
+    };
+
+    window.castReceiverManager.start({ statusText: 'Application is starting' });
 }
 
 function channelElement(channel) {
