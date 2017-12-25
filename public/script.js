@@ -25,7 +25,7 @@ function connect() {
 
         displayChannelList(browserData.channels);
 
-        window.messageBus.send(event.senderId, "Browser data received");
+        window.messageBus.send(event.senderId, { message: "Browser data received" });
     };
 
     window.castReceiverManager.start({ statusText: 'Application is starting' });
