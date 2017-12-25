@@ -1,3 +1,8 @@
+@font-face {
+    font-family: TwitchyTV;
+    src: url('font/Twitchy.TV.otf');
+}
+
 html, body, .container {
     width: 100%;
     height: 100%;
@@ -5,7 +10,7 @@ html, body, .container {
     padding: 0;
     overflow: hidden;
 
-    font-family: Verdana, Arial, serif;
+    font-family: Raleway, Arial, serif;
     font-size: 1.1em;
 }
 
@@ -25,6 +30,9 @@ html {
 }
 
 .header {
+    font-family: TwitchyTV, serif;
+    font-weight: normal;
+    line-height: 20px;
     flex: 0 0 auto;
     height: 100px;
     color: white;
