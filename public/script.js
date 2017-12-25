@@ -1,4 +1,23 @@
-displayChannelList(data.channels);
+window.onload = connect;
+
+function connect() {
+
+    cast.receiver.logger.setLevelValue(0);
+
+    console.log('Starting Receiver Manager');
+    window.castReceiverManager = cast.receiver.CastReceiverManager.getInstance();
+    window.messageBus = window.castReceiverManager.getCastMessageBus(
+        'urn:x-cast:com.google.cast.twitchcast.browser'
+    );
+    window.messageBus.onMessage = function (event) {
+
+        console.log(`Received browser data from: ${event.senderId}`);
+
+        const browserData = event.data;
+
+        displayChannelList(browserData.channels);
+    }
+}
 
 function channelElement(channel) {
     return $(template(`
