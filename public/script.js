@@ -26,6 +26,7 @@ function connect() {
         displayChannelList(browserData.channels);
 
         const response = JSON.stringify({
+            requestId: browserData.requestId,
             message: "Browser data received"
         });
         window.messageBus.send(event.senderId, response);
