@@ -1,0 +1,65 @@
+html, body, .container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    font-family: Verdana, Arial, serif;
+    font-size: 1.1em;
+}
+
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.container {
+    background: #4b367c;
+    padding: 30px 60px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    flex: 0 0 auto;
+    height: 100px;
+    color: white;
+}
+
+.channel-list {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+    min-height: 0;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.channel {
+    display: flex;
+    flex-direction: row;
+    flex: 0 0 50%;
+    color: white;
+}
+
+.channel-logo {
+    width: 70px;
+    height: 70px;
+    margin-right: 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.channel-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly
+}
+
+.channel-game {
+    color: #d3cae8;
+}
