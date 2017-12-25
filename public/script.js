@@ -23,6 +23,8 @@ function connect() {
         const browserData = event.data;
 
         displayChannelList(browserData.channels);
+
+        window.messageBus.send(event.senderId, "Browser data received");
     };
 
     window.castReceiverManager.start({ statusText: 'Application is starting' });
